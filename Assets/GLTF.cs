@@ -46,7 +46,7 @@ public class GLTF : MonoBehaviour
             if (!fileLinkSetUp)
             {
                 fileLink = req.downloadHandler.text;
-                fileLink = fileLink.Substring(1);
+                fileLink = fileLink.Substring(9);
                 fileLink = fileLink.Remove(fileLink.Length - 2, 2); 
             }
         }
@@ -57,7 +57,7 @@ public class GLTF : MonoBehaviour
         Destroy(model);
         model = Importer.LoadFromFile(binFilePath);
         Vector3 position = transform.position;
-        position.z += 0.5f;
+        position.z += 2f;
         position.y += 1.2f;
         model.transform.position = position;
 
